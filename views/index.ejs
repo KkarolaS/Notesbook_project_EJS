@@ -4,22 +4,24 @@
   <h1 class="add-title">Add a new Note!</h1>
 
   <form action="/submit" method="POST" class="note-form">
-    <lable for="title">Note title:</lable>
+    <lable for="title">Note's title:</lable>
     <input class="user-input title" type="text" name="title" />
-    <lable for="note">Note text:</lable>
+    <lable for="note">Note's content:</lable>
     <input class="user-input" type="text" name="note" required />
     <input class="btn" type="submit" value="add" />
   </form>
 
-  <div>
+  <div class="last-notes-wrapper">
     <%if(locals.title && locals.note) { %>
-    <h3 class="info-title">Your note was added! The last note:</h3>
-    <div class="info-note-wrapper">
-      <p class="note-text"><%=title%></p>
+    <h3 class="last-note-title">Your note was added!</h3>
+    <h4 class="last-note-title">The last note:</h4>
+    <div class="last-note-box">
+      <p class="note-text-title"><%=title%></p>
       <p class="note-text"><%=note%></p>
+      <a href="/view"> <button class="see-more-btn">See more 👉</button></a>
     </div>
     <%} else {%>
-    <h3 class="info-title">You have no new Notes</h3>
+    <h3 class="last-note-title">You have no new Notes</h3>
     <%}%>
   </div>
 </div>
