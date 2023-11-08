@@ -1,0 +1,26 @@
+<%- include("partials/header.ejs") %>
+
+<div class="add-notes-wrapper">
+  <h1 class="add-title">Add a new Note!</h1>
+
+  <form action="/submit" method="POST" class="note-form">
+    <lable for="title">Note title:</lable>
+    <input class="user-input title" type="text" name="title" />
+    <lable for="note">Note text:</lable>
+    <input class="user-input" type="text" name="note" required />
+    <input class="btn" type="submit" value="add" />
+  </form>
+
+  <div>
+    <%if(locals.title && locals.note) { %>
+    <h3 class="info-title">Your note was added! The last note:</h3>
+    <div class="info-note-wrapper">
+      <p class="note-text"><%=title%></p>
+      <p class="note-text"><%=note%></p>
+    </div>
+    <%} else {%>
+    <h3 class="info-title">You have no new Notes</h3>
+    <%}%>
+  </div>
+</div>
+<%- include("partials/footer.ejs") %>
