@@ -174,7 +174,7 @@
   height: 30px;
   padding: 2px;
   border-radius: 20px;
-  background-color: rgb(255, 207, 157, 0.5);
+  background-color: rgb(255, 207, 157);
   cursor: pointer;
   border: 2px solid rgb(0, 66, 37);
 }
@@ -189,20 +189,59 @@
 /*  */
 /*  */
 /*  */
+
 .notes-wrapper {
-  width: auto;
-  height: 300px;
   display: flex;
-  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 .note {
-  background-color: antiquewhite;
-  width: 300px;
-  height: 200px;
-  color: black;
+  width: 200px;
+  min-height: 200px;
+  padding: 10px;
+  background-color: rgb(245, 245, 220, 0.9);
+  color: rgb(0, 66, 37);
+  border: 2px solid rgb(255, 207, 157);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
 }
 
+.btns-wrapper {
+  width: 200px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.change-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.change-input {
+  background-color: rgb(245, 245, 220);
+  color: rgb(0, 66, 37);
+  font-size: 16px;
+  padding: 5px;
+}
+
+.save-btn {
+  background-color: rgb(255, 176, 0);
+}
+
+.hidden {
+  display: none;
+}
 /*  */
 /*  */
 /*  */
