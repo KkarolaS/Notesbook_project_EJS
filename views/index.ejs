@@ -5,15 +5,15 @@
 
   <form action="/submit" method="POST" class="note-form">
     <lable for="title">Note's title:</lable>
-    <input class="user-input title" type="text" name="title" />
+    <input class="user-input title" type="text" name="title" required />
     <lable for="note">Note's content:</lable>
     <input class="user-input" type="text" name="note" required />
-    <input class="btn" type="submit" value="add" />
+    <input class="btn" type="submit" value="Add" />
   </form>
 
   <div class="last-notes-wrapper">
     <%if(locals.title && locals.note) { %>
-    <h3 class="last-note-title">Your note was added!</h3>
+    <h3 class="last-note-title"><%=message%></h3>
     <h4 class="last-note-title">The last note:</h4>
     <div class="last-note-box">
       <p class="note-text-title"><%=title%></p>

@@ -18,6 +18,7 @@
   width: 100vw;
   height: 50px;
   display: flex;
+  gap: 20px;
   box-shadow: 4px 4px 4px 0px rgba(0, 66, 37, 0.69);
   -webkit-box-shadow: 4px 4px 4px 0px rgba(0, 66, 37, 0.69);
   -moz-box-shadow: 4px 4px 4px 0px rgba(0, 66, 37, 0.69);
@@ -26,11 +27,7 @@
 
 .menu-item {
   width: 100px;
-  margin-left: 50px;
   font-size: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
   cursor: pointer;
   border: none;
@@ -58,11 +55,19 @@
 .menu-item a {
   text-decoration: none;
   color: rgb(0, 66, 37);
-  /* width: 100px;
-  height: 50px; */
-  /* TODO verbessern a - vergrossten */
+  width: 100px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
 .add-notes-wrapper {
   height: calc(100vh - 100px);
   display: flex;
@@ -94,6 +99,7 @@
   border-radius: 10px;
   color: rgb(0, 66, 37);
   font-size: 18px;
+  padding: 8px;
 }
 
 .user-input:focus,
@@ -117,10 +123,8 @@
   border-radius: 50px;
   transition: transfor 0.5s ease;
   font-size: 20px;
-  position: relative;
   cursor: pointer;
   border: none;
-  overflow: hidden;
 }
 
 .btn:hover,
@@ -137,6 +141,7 @@
 .last-notes-wrapper {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
 }
 .last-note-title {
@@ -196,4 +201,16 @@
   width: 300px;
   height: 200px;
   color: black;
+}
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+.footer {
+  font-size: 18px;
+  margin-left: 20px;
+  position: fixed;
+  bottom: 20px;
 }

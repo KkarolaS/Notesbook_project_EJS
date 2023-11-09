@@ -20,8 +20,21 @@ app.get("/view", (req, res) => {
 app.post("/submit", (req, res) => {
   const title = req.body["title"];
   const note = req.body["note"];
-  notes.push({ title: title, note: note, isEdited: false });
-  res.render("index.ejs", { title: title, note: note });
+  const lastNoteIndex = notes.length - 1;
+  let message = "Your note was added!";
+  if (notes.length > 0) {
+    if (notes[lastNoteIndex].note !== note) {
+      message = "Your note was added!";
+      notes.push({ title: title, note: note, isEdited: false });
+    } else {
+      message =
+        "Note is identical with the previous one submitted by you. It has not been added";
+    }
+  } else {
+    message = "Your note was added!";
+    notes.push({ title: title, note: note, isEdited: false });
+  }
+  res.render("index.ejs", { title: title, note: note, message: message });
 });
 
 app.post("/delete", (req, res) => {
