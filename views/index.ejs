@@ -1,14 +1,14 @@
 <%- include("partials/header.ejs") %>
 
-<div class="add-notes-wrapper">
-  <h1 class="add-title">Add a new Note!</h1>
+<section class="section-wrapper">
+  <h1 class="main-title">Add a new Note!</h1>
 
-  <form action="/submit" method="POST" class="note-form">
+  <form action="/submit" method="POST" class="add-note-form">
     <lable for="title">Note's title:</lable>
     <input class="user-input title" type="text" name="title" required />
     <lable for="note">Note's content:</lable>
     <input class="user-input" type="text" name="note" required />
-    <input class="btn" type="submit" value="Add" />
+    <input class="add-btn" type="submit" value="Add" />
   </form>
 
   <div class="last-notes-wrapper">
@@ -18,11 +18,11 @@
     <div class="last-note-box">
       <p class="note-text-title"><%=title%></p>
       <p class="note-text"><%=note%></p>
-      <a href="/view"> <button class="see-more-btn">See more 👉</button></a>
+      <a href="/view"> <button class="std-btn">See more 👉</button></a>
     </div>
     <%} else {%>
-    <h3 class="last-note-title">You have no new Notes</h3>
+    <h3 class="no-notes-title">You have no new Notes</h3>
     <%}%>
   </div>
-</div>
+</section>
 <%- include("partials/footer.ejs") %>

@@ -27,8 +27,7 @@ app.post("/submit", (req, res) => {
       message = "Your note was added!";
       notes.push({ title: title, note: note, isEdited: false });
     } else {
-      message =
-        "Note is identical with the previous one submitted by you. It has not been added";
+      message = "";
     }
   } else {
     message = "Your note was added!";

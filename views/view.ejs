@@ -1,24 +1,20 @@
 <%- include("partials/header.ejs") %>
 
-<div class="add-notes-wrapper">
-  <h2 class="add-title">Your notes:</h2>
+<section class="section-wrapper">
+  <h2 class="main-title arch-note-title">Your notes:</h2>
   <div class="notes-wrapper">
     <%if(locals.notes && notes.length > 0) { notes.map((item, index) => { %>
     <div class="note">
-      <p class="note-text-title"><%=item.title%></p>
-      <p class="note-text"><%=item.note%></p>
-
+      <div class="note-holder">
+        <p class="note-text-title"><%=item.title%></p>
+        <p class="note-text"><%=item.note%></p>
+      </div>
       <div class="btns-wrapper">
         <form action="/edit" method="POST">
           <%if(item.isEdited) {%>
           <input class="hidden" type="submit" value="Edit" name="<%=index%>" />
           <% } else { %>
-          <input
-            class="see-more-btn"
-            type="submit"
-            value="Edit"
-            name="<%=index%>"
-          />
+          <input class="std-btn" type="submit" value="Edit" name="<%=index%>" />
           <%}%>
         </form>
 
@@ -37,7 +33,7 @@
             value="<%=item.note%>"
           />
           <input
-            class="see-more-btn save-btn"
+            class="std-btn save-btn"
             type="submit"
             value="Save"
             name="<%=index%>"
@@ -47,7 +43,7 @@
 
         <form action="/delete" method="POST">
           <input
-            class="see-more-btn"
+            class="std-btn"
             type="submit"
             value="Delete"
             name="<%=index%>"
@@ -56,9 +52,9 @@
       </div>
     </div>
     <%})} else {%>
-    <h1>You have no Notes</h1>
+    <h3 class="no-notes-title">You have no Notes</h3>
     <%}%>
   </div>
-</div>
+</section>
 
 <%- include("partials/footer.ejs") %>
